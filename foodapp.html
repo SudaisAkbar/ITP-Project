@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Food Application</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    header {
+      background-color: #ff6f00;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+    
+    main {
+      padding: 20px;
+    }
+    
+    section {
+      margin-bottom: 40px;
+    }
+    
+    h2 {
+      color: #ff6f00;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    
+    p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    
+    a {
+      color: #ff6f00;
+      text-decoration: none;
+    }
+    
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+    }
+    
+    .menu-item {
+      background-color: #f5f5f5;
+      padding: 20px;
+      border-radius: 4px;
+    }
+    
+    .menu-item h4 {
+      margin-top: 0;
+    }
+    
+    .menu-item p {
+      margin-bottom: 10px;
+    }
+    
+    .menu-item button {
+      background-color: #ff6f00;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    .menu-item button:hover {
+      background-color: #e65100;
+    }
+    
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    
+    .category {
+      flex: 0 0 33.33%;
+      background-color: #f5f5f5;
+      padding: 20px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+    
+    .category h4 {
+      margin-top: 0;
+    }
+    
+    .category p {
+      margin-bottom: 10px;
+    }
+    
+    .category a {
+      color: #ff6f00;
+      text-decoration: none;
+    }
+    
+    .category a:hover {
+      text-decoration: underline;
+    }
+    
+    #cart-page {
+      background-color: #f5f5f5;
+      padding: 20px;
+      border-radius: 4px;
+    }
+    
+    #cart-page h2 {
+      margin-top: 0;
+    }
+    
+    .cart-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    .cart-item span {
+      font-weight: bold;
+    }
+    
+    .cart-item button {
+      background-color: #ff6f00;
+      color: #fff;
+      border: none;
+      padding: 4px 8px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    .cart-item button:hover {
+      background-color: #e65100;
+    }
+    
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+    
+    footer p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Food Hut</h1>
+  </header>
+  
+  <main>
+    <section id="front-page">
+      <h2>Explore Our Food</h2>
+      <p>Order delicious meals from your favorite restaurants.</p>
+      <a href="#menu-page">View Menu</a>
+    </section>
+    
+    <section id="menu-page">
+      <h2>Menu</h2>
+      
+      <h3>Featured Items</h3>
+      <div class="menu">
+        <div class="menu-item">
+          <h4>Pizza</h4>
+          <p>Delicious pizza topped with fresh ingredients.</p>
+          <button onclick="addToCart('Pizza')">Add to Cart</button>
+        </div>
+        <div class="menu-item">
+          <h4>Burger</h4>
+          <p>Juicy beef patty with all the toppings.</p>
+          <button onclick="addToCart('Burger')">Add to Cart</button>
+        </div>
+        <div class="menu-item">
+          <h4>Sushi</h4>
+          <p>Fresh and flavorful sushi rolls.</p>
+          <button onclick="addToCart('Sushi')">Add to Cart</button>
+        </div>
+      </div>
+      
+      <h3>Menu Categories</h3>
+      <div class="categories">
+        <div class="category">
+          <h4>Pizza</h4>
+          <p>Explore our selection of mouthwatering pizzas.</p>
+          <a href="#">View More</a>
+        </div>
+        <div class="category">
+          <h4>Burger</h4>
+          <p>Discover a variety of delicious burger options.</p>
+          <a href="#">View More</a>
+        </div>
+        <div class="category">
+          <h4>Sushi</h4>
+          <p>Experience the taste of authentic sushi.</p>
+          <a href="#">View More</a>
+        </div>
+      </div>
+    </section>
+    
+    <section id="cart-page">
+      <h2>Cart</h2>
+      <div id="cart">
+        <div class="cart-item">
+          <span>Pizza</span>
+          <button onclick="removeFromCart('Pizza')">Remove</button>
+        </div>
+        <div class="cart-item">
+          <span>Burger</span>
+          <button onclick="removeFromCart('Burger')">Remove</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2023 FoodApp. All rights reserved.</p>
+  </footer>
+  
+  <script>
+    // JavaScript code for handling functionality
+
+    function addToCart(item) {
+      console.log(item + ' added to cart.');
+    }
+
+    function removeFromCart(item) {
+      console.log(item + ' removed from cart.');
+    }
+  </script>
+</body>
+</html>
